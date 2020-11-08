@@ -40,3 +40,5 @@ OTHER_FILES += \
     android-source/licences/LGPL.txt \
     android-source/licences/MPL.txt
 
+ANDROID_ABIS = armeabi-v7a arm64-v8a x86 x86_64
+

@@ -120,7 +120,7 @@ bool MyDic::compare(const QString &s1, const QString &s2)
 
 void MyDic::sortArray()
 {
-        qSort(dic.begin(), dic.end(), MyDic::compare);
+        std::sort(dic.begin(), dic.end(), MyDic::compare);
 }
 
 void MyDic::dicHashFill(QList<QString> &dic1)

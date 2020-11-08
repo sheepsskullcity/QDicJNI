@@ -5,7 +5,7 @@
 #ifdef Q_OS_ANDROID
 #include <jni.h>
 #endif
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WINDOWS
 #include <QCoreApplication>
 #endif
 
@@ -206,7 +206,7 @@ JNIEXPORT jint JNI_OnLoad(JavaVM* vm, void* /*reserved*/)
     return JNI_VERSION_1_6;
 }
 #endif
-#ifdef Q_OS_WIN32
+#ifdef Q_OS_WINDOWS
 
 static bool b_work = false;
 static bool not_canceled = true;
@@ -307,7 +307,10 @@ int startTask(QString book_path, QString book_out_name, QString list_name, QStri
 int main(int argc, char* argv[])
 {
     QCoreApplication a(argc, argv);
-
+    initDic("path","enc");
+    initRexDic("path","enc");
+    startTask("book_path", "book_out_name", "list_name", "book_enc", true, true, false);
+    clearStatus();
     return a.exec();
 }
 #endif
